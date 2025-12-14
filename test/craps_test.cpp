@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "die.h"
 #include "roll.h"
+#include "shooter.h"
 #include <ctime>
 
 
@@ -17,6 +18,7 @@ TEST_CASE("Test die roll returns value from 1 to 6") {
 		REQUIRE(roll <= 6);
 	}
 }
+
 // Question 2 test case
 TEST_CASE("Test dice rolls returns value from 2 to 12") {
 	srand(time(0));
@@ -27,5 +29,18 @@ TEST_CASE("Test dice rolls returns value from 2 to 12") {
 		roll.roll_dice();
 		REQUIRE(roll.roll_value() >= 2);
 		REQUIRE(roll.roll_value() <= 12);
+	}
+}
+
+// Question 3 test case
+TEST_CASE("Test Roll result returns value from 2 to 12") {
+	srand(time(0));
+	Die x;
+	Die y;
+	Shooter shooter;
+	for(int i = 0; i < 10; i++) {
+		Roll* roll = shooter.throw_dice(x, y);
+		REQUIRE(roll->roll_value() >= 2);
+		REQUIRE(roll->roll_value() <= 12);
 	}
 }
