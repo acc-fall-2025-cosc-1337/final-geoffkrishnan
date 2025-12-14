@@ -7,13 +7,14 @@ class Roll
 public:
     Roll(Die& die_a, Die& die_b);
     void roll_dice();
-    int roll_value() const { return rolled_values; };
+    int roll_value() const { return rolled_value; };
+    void set_roll_value(int value);
 
 
 private:
     Die& die1;
     Die& die2;
-    int rolled_values{0};
+    int rolled_value{0};
 };
 
 #endif
