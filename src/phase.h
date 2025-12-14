@@ -7,7 +7,7 @@ enum class RollOutcome {
     craps,
     point,
     seven_out,
-    nopoint
+    notpoint
 };
 
 class Phase

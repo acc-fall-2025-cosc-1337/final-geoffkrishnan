@@ -116,16 +116,16 @@ TEST_CASE("Test PointPhase returns seven_out when roll == 7") {
 	REQUIRE(phase.get_outcome(&roll) == RollOutcome::seven_out);
 }
 
-TEST_CASE("Test PointPhase returns nopoint for remaining values") {
+TEST_CASE("Test PointPhase returns notpoint for remaining values") {
 	Die x;
 	Die y;
 	Roll roll(x, y);
 	
 	PointPhase phase(6); 
-	int nopoint_values[] = {2, 3, 4, 5, 8, 9, 10, 11, 12}; 
+	int notpoint_values[] = {2, 3, 4, 5, 8, 9, 10, 11, 12}; 
 	
-	for (int value : nopoint_values) {
+	for (int value : notpoint_values) {
 		roll.set_roll_value(value);
-		REQUIRE(phase.get_outcome(&roll) == RollOutcome::nopoint);
+		REQUIRE(phase.get_outcome(&roll) == RollOutcome::notpoint);
 	}
 }

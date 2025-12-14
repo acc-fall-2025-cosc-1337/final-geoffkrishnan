@@ -7,6 +7,6 @@ RollOutcome PointPhase::get_outcome(Roll* roll) {
     } else if (value == 7) {
         return RollOutcome::seven_out;
     } else {
-        return RollOutcome::nopoint;
+        return RollOutcome::notpoint;
     }
 }
